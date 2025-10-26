@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
         increment,
         decrement,
         removeFromCart,
-        clearCart, // 👈 agregado aquí
+        clearCart,
       }}
     >
       {children}

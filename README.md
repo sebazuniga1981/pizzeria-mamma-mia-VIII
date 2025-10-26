@@ -1,17 +1,65 @@
-1. Implementa useParams para obtener el id de la pizza en la página de Pizza.jsx. Con el id obtenido, realiza una petición a la API para obtener la información de la pizza y mostrarla en la página. (2 puntos)
-   Tips: Puedes además implementar Link en el componente CardPizza.jsx para redirigir a la página de Pizza.jsx con el id de la pizza.
-   R. Realizado
+🍕 Pizzería Mamma Mía_VIII
 
-2. Crea unUserContext para almacenar el token (simulado) que estamos utilizando en el Navbar.jsx, Por ahora este context tiene que tener las siguientes características: ○ Unestadoquealmaceneel token, por defecto, estará en true. ○ Unmétodologoutquecambieel estado del token a false. (2 puntos)
-R.Realizado
+🎯 Objetivo
 
-3. Utiliza el UserContext en el Navbar.jsx, al hacer click en el botón de logout, se debe ejecutar el método logout. (2 puntos) Tips: Recuerda que cuando el token es true, debe mostrar los botones de: Profile, Logout. Cuando el token es false, debe mostrar los botones de: Login, Register. HomeyTotal siempre deben estar visibles.
-R.Realizado
+Implementar autenticación real mediante JSON Web Token (JWT), conectando el frontend en React + Vite con un backend en Node.js/Express.
+El proyecto simula un sistema de pedidos de pizzas con login, registro, perfil de usuario y compra protegida.
 
-4. Utiliza el UserContext en la página de Cart.jsx, deshabilita el botón "pagar" en caso de que el token sea false. (1 punto)
-R.Realizado
+🚀 Tecnologías utilizadas
 
-5. Implementa la ruta protegida para "/profile". Si el token es false, redirige a "/login". Además, si el token es true, los usuarios no deberían poder acceder a la página de login y register (los puedes redirigir al home). (3 puntos)
-R.Realizado
+Frontend: React + Vite
 
-Link al deploy https://sebazuniga1981.github.io/pizzeria-mamma-mia-vii/
+Librerías:
+React Router DOM
+React Bootstrap
+Context API
+ESLint
+Backend: Node.js + Express
+bcrypt
+
+⚙️ Instalación del proyecto
+Clonar el repositorio
+git clone https://github.com/sebazuniga1981/pizzeria-mamma-mia-VIII.git
+cd pizzeria-mamma-mia-VIII
+
+
+Por defecto, se abrirá en:
+
+http://localhost:5173
+
+🖥️ Backend (API)
+
+Para usar JWT y las rutas protegidas, necesitas tener corriendo el backend del desafío.
+
+1️⃣ Ubicación del backend
+
+El código se encuentra en la carpeta:
+
+/Material de apoyo - Backend Pizzas
+
+2️⃣ Instalación
+npm install
+
+3️⃣ Iniciar el servidor
+npm run dev
+
+✅ Cumplimiento de requerimientos del Hito 8
+#	Requerimiento	Estado
+1	UserContext con login() y register() consumiendo API
+2	logout() elimina token y email
+3	getProfile() obtiene usuario autenticado
+4	LoginPage y RegisterPage usan contexto
+5	Profile.jsx muestra email y botón logout
+6	Botón Logout en Navigation
+7	Cart.jsx envía checkout con token
+8	Mensaje de compra exitosa
+9	Proyecto corre con backend local
+10	Estructura limpia y funcional
+🧪 Usuario de prueba
+
+Puedes usar los datos incluidos por defecto en el backend:
+
+{
+  "email": "test@test.com",
+  "password": "123123"
+}

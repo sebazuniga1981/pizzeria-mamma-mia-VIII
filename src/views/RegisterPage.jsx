@@ -35,7 +35,6 @@ const RegisterPage = () => {
 
     if (Object.keys(v).length === 0) {
       setErrors({});
-      // 👇 usamos el register real del contexto
       const success = await register(form.email, form.password);
 
       if (success) {

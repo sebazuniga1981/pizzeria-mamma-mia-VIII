@@ -5,7 +5,7 @@ const LoginPage = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState(null);
-  const { login } = useContext(UserContext); // 👈 importamos el método del contexto
+  const { login } = useContext(UserContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,7 +34,6 @@ const LoginPage = () => {
     const v = validate();
     if (Object.keys(v).length === 0) {
       setErrors({});
-      // 👇 llamamos al login real del contexto
       const success = await login(form.email, form.password);
 
       if (success) {
@@ -97,7 +96,7 @@ const LoginPage = () => {
           className="btn btn-dark w-100"
           disabled={!canSubmit}
         >
-          A pedir pizza 🍕
+          pide tu pizza 🍕
         </button>
       </form>
     </div>

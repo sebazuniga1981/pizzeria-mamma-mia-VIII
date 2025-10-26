@@ -58,7 +58,7 @@ export const UserProvider = ({ children }) => {
     }
   };
 
-  // 🧾 Obtener perfil del usuario (requiere token)
+
   const getProfile = async () => {
     try {
       const res = await fetch("http://localhost:5000/api/auth/me", {
@@ -75,7 +75,7 @@ export const UserProvider = ({ children }) => {
     }
   };
 
-  // 🚪 Cerrar sesión
+  //Cerrar sesión
   const logout = () => {
     setToken(null);
     setEmail(null);
