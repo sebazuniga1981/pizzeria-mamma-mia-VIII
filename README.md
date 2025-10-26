@@ -63,3 +63,6 @@ Puedes usar los datos incluidos por defecto en el backend:
   "email": "test@test.com",
   "password": "123123"
 }
+
+deploy del proyecto en 
+https://sebazuniga1981.github.io/pizzeria-mamma-mia-VIII/
