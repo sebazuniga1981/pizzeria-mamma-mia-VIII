@@ -1,8 +1,17 @@
+import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom"; //importa Link aquí
 
-const CardPizza = ({ id, name, price, ingredients, img, onAdd, desc }) => {
+const CardPizza = ({ name, price, ingredients, img, onViewMore, onAdd, desc }) => {
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = () => {
+    onAdd();
+    setAdded(true);
+    // vuelve al estado normal después de 1 segundo
+    setTimeout(() => setAdded(false), 1000);
+  };
+
   return (
     <Card style={{ width: "18rem", margin: "1rem", minHeight: "430px" }}>
       <Card.Img variant="top" src={img} alt={name} />
@@ -32,31 +41,31 @@ const CardPizza = ({ id, name, price, ingredients, img, onAdd, desc }) => {
           <strong>Descripción:</strong> {desc}
         </Card.Text>
 
+        {/* Botones */}
         <div style={{ display: "flex", gap: "0.5rem", marginTop: "auto" }}>
-          {/* 👇 Ver más lleva a la ruta dinámica /pizza/:id */}
           <Button
-            as={Link}
-            to={`/pizza/${id}`}
             style={{
               flex: 1,
               backgroundColor: "black",
               color: "white",
               border: "none",
             }}
+            onClick={onViewMore}
           >
             Ver más
           </Button>
 
           <Button
+            onClick={handleAdd}
             style={{
               flex: 1,
-              backgroundColor: "white",
-              color: "black",
+              backgroundColor: added ? "green" : "white",
+              color: added ? "white" : "black",
               border: "1px solid black",
+              transition: "all 0.3s ease",
             }}
-            onClick={onAdd}
           >
-            Añadir
+            {added ? "Agregada ✅" : "Añadir"}
           </Button>
         </div>
       </Card.Body>
